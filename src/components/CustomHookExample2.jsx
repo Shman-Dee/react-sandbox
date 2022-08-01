@@ -15,10 +15,11 @@ function CustomHookExample2() {
 
     setTasks([...tasks, taskObj])
   }
+  console.log(task)
 
   return (
     <>
-      <form onSubmit className="w-49">
+      <form onSubmit={onSubmit} className="w-49">
         <div className="mb-3">
           <label className="form-label">Task</label>
           <input
@@ -33,9 +34,10 @@ function CustomHookExample2() {
         </button>
       </form>
       <hr />
-      {tasks.map((task) => {
-        ;<h3 key={task.date}>{task.task}</h3>
-      })}
+      {tasks.map((task) => (
+        <h3 key={task}>{task.task}</h3>
+      ))}
+      
     </>
   )
 }
